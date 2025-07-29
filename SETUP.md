@@ -122,3 +122,4 @@ After new packages:
         Use branches for new features:
 
                 git checkout -b feature-name
+
