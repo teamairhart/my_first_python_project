@@ -6,6 +6,8 @@ Use this checklist every time you create a new Python project to ensure it’s o
 
 ## ✅ 1. Create & Open Project Folder
 
+```bash
+
         dev
         mkdir MyProject
         cd MyProject
