@@ -1,93 +1,73 @@
 # 🚀 New Python Project Setup Checklist
 
-Use this checklist every time you create a new Python project to ensure it’s organized, version-controlled, and linked to GitHub.
+Use this checklist every time you create a new Python project to ensure it’s properly organized, version-controlled, and ready to use with VS Code and GitHub.
 
 ---
 
 ## ✅ 1. Create & Open Project Folder
-
 ```bash
+dev                # jumps to ~/DevProjects
+mkdir MyProject
+cd MyProject
+code .
 
-        dev
-        mkdir MyProject
-        cd MyProject
-        code .
+✅ 2. Create a Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
 
+✔ You should see (.venv) in the terminal prompt.
 
-## ✅ 2. Create a Virtual Environment
+✅ 3. Upgrade pip
+python -m pip install --upgrade pip
 
-        python3 -m venv .venv
-        source .venv/bin/activate
+✅ 4. Install Dependencies
+pip install requests pandas matplotlib
 
-## ✅ 3. Upgrade pip
+Track dependencies:
+pip freeze > requirements.txt
 
-        python -m pip install --upgrade pip
+✅ 5. Initialize Git
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit"
 
-## ✅ 4. Install Dependencies (if needed)
+✅ 6. Create Repo on GitHub
+        Go to https://github.com/new
 
-        pip install requests pandas matplotlib
-        pip freeze > requirements.txt
+        Name it MyProject (same as folder)
 
-## ✅ 5. Create a .gitignore File
+        Leave README unchecked
 
-Create a new file named .gitignore and then paste:
+✅ 7. Link Local Project to GitHub
+git remote add origin https://github.com/YourUsername/MyProject.git
+git push -u origin main
 
-        __pycache__/
-        *.pyc
-        *.pyo
-        *.pyd
+✅ 8. Verify Setup
+    Check Source Control tab in VS Code
 
-        .venv/
-        env/
-        venv/
+    Run your code:
+        python file.py
 
-        .vscode/
-        .idea/
+✅ 9. Ongoing Workflow
 
-        .DS_Store
-        .ipynb_checkpoints/
-        build/
-        dist/
-        *.egg-info/
-
-## ✅ 6. Initialize Git
-
-        git init
-        git branch -M main
-        git add .
-        git commit -m "Initial commit"
-
-## ✅ 7. Create Repo on GitHub
-
-        Go to https://github.com/new,
-        name it "Whatever_your_project_name_is", leave checkboxes unchecked, and create the repo.
-
-## ✅ 8. Link Local Project to GitHub
-
-        git remote add origin https://github.com/teamairhart/Whatever_your_project_name_is.git
-        git push -u origin main
-## ✅ 9. Ongoing Workflow
-
-    # After making code changes
+After changes:
         git add .
         git commit -m "Describe changes"
         git push
 
-        # After installing new packages
+After new packages:
         pip freeze > requirements.txt
         git add requirements.txt
-        git commit -m "Update dependencies"
+        git commit -m "Updated dependencies"
         git push
-      
-## ✅ 10. Best Practices
-        
-        # Always create a .gitignore before your first commit
-        # Always create requirements.txt if you install packages
-        # Add a README.md to explain the project
-        # Use branches for new features:
-            
+
+✅ 10. Optional Best Practices
+    Add .gitignore to ignore .venv/ and __pycache__/
+
+    Create a README.md with project details
+
+    Use branches for features:
             git checkout -b feature-name
-
-
 
 
