@@ -11,6 +11,7 @@ mkdir MyProject
 cd MyProject
 code .
 
+
 ✅ 2. Create a Virtual Environment
 
 # Create the virtual environment (only the first time)
@@ -29,29 +30,70 @@ deactivate
 python -m pip install --upgrade pip
 
 ✅ 4. Install Dependencies
-pip install requests pandas matplotlib
+pip install requests pandas matplotlib openai
 
 Track dependencies:
 pip freeze > requirements.txt
 
-✅ 5. Initialize Git
+✅ 5. Create a .gitignore File
+touch .gitignore
+code .gitignore
+
+                #Paste the following into .gitignore:
+
+                # Ignore virtual environment
+                .venv/
+
+                # Ignore Python cache files
+                __pycache__/
+                *.pyc
+                *.pyo
+                *.pyd
+
+                # Ignore macOS system files
+                .DS_Store
+
+                # Ignore environment variables
+                .env
+
+                # Ignore Jupyter notebook checkpoints
+                .ipynb_checkpoints/
+
+                # Ignore build/dist folders
+                build/
+                dist/
+                *.egg-info/
+
+                # Optional: VS Code settings
+                .vscode/
+                .idea/
+
+
+#   ****Save the file (Cmd+S).****
+
+
+✅ 6. Initialize Git
 git init
 git branch -M main
 git add .
 git commit -m "Initial commit"
 
-✅ 6. Create Repo on GitHub
+✅ 7. Create Repo on GitHub
+        
         Go to https://github.com/new
 
         Name it MyProject (same as folder)
 
-        Leave README unchecked
+        Leave checkboxes unchecked
 
-✅ 7. Link Local Project to GitHub
-git remote add origin https://github.com/YourUsername/MyProject.git
+        Click Create repository
+        
+
+✅ 8. Link Local Project to GitHub
+git remote add origin https://github.com/YourUsername/project_name_goes_here.git
 git push -u origin main
 
-✅ 8. Verify Setup
+✅ 9. Verify Setup
     Check Source Control tab in VS Code
 
     Run your code:
@@ -70,12 +112,13 @@ After new packages:
         git commit -m "Updated dependencies"
         git push
 
-✅ 10. Optional Best Practices
-    Add .gitignore to ignore .venv/ and __pycache__/
+✅ 10. Final Best Practices
+        Always create a .gitignore before your first commit (Step 5).
 
-    Create a README.md with project details
+        Always create requirements.txt when you install packages.
 
-    Use branches for features:
-            git checkout -b feature-name
+        Add a README.md to explain the project.
 
+        Use branches for new features:
 
+                git checkout -b feature-name
