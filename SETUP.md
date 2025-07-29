@@ -83,7 +83,8 @@ Create a new file named .gitignore and then paste:
         # Always create requirements.txt if you install packages
         # Add a README.md to explain the project
         # Use branches for new features:
-git checkout -b feature-name
+            
+            git checkout -b feature-name
 
 
 
