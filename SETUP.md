@@ -12,10 +12,18 @@ cd MyProject
 code .
 
 ✅ 2. Create a Virtual Environment
+
+# Create the virtual environment (only the first time)
 python3 -m venv .venv
+
+# Activate the virtual environment (every time you work on the project)
 source .venv/bin/activate
 
-✔ You should see (.venv) in the terminal prompt.
+# You will see (.venv) at the beginning of the terminal prompt
+
+# To deactivate when done:
+deactivate
+
 
 ✅ 3. Upgrade pip
 python -m pip install --upgrade pip
